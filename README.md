@@ -1,35 +1,50 @@
-# Synexis Technologies website
+# Synexis Technologies — Official Website
 
-Official company website for **Synexis Technologies** — *Engineered for Excellence.*
+**Brand line:** Engineered for Excellence.  
+**Domain:** https://synexistech.co.zw/  
+**Repository:** https://github.com/tarieciphertech/synexistech.co.zw-
 
-## Website
+## Hosting and deployment
 
-- Domain: https://synexistech.co.zw/
-- Hosting target: GitHub Pages
-- Source: static HTML, CSS and JavaScript
-- Deployment: GitHub Actions workflow at `.github/workflows/pages.yml`
+This is a static, multi-page website hosted entirely on GitHub Pages. GitHub Actions deploys the repository root on pushes to `main`.
 
-## Deploy
+- No VPS or separate web-hosting server is required.
+- Pages: Home, About, Services, Our Work, Contact and a custom 404.
+- Shared styles and browser interactions: `assets/css/site.css` and `assets/js/site.js`.
+- The company brand image is stored in the repository root.
+- `CNAME` sets the custom domain.
+- `robots.txt` and `sitemap.xml` provide search-engine discovery.
 
-The workflow publishes the repository root whenever a commit is pushed to `main`, and can also be run manually from the Actions tab.
+## GitHub configuration
 
-In **Settings → Pages**, select **GitHub Actions** as the build and deployment source. Keep the custom domain set to `synexistech.co.zw`.
+1. Open **Settings → Pages**.
+2. Set **Build and deployment → Source** to **GitHub Actions**.
+3. Keep the custom domain as `synexistech.co.zw`.
+4. Confirm the latest workflow under **Actions** completes successfully.
+5. Once GitHub has issued the certificate, enable **Enforce HTTPS**.
 
 ## DNS
 
-For the apex domain to resolve to GitHub Pages, configure the four GitHub Pages A records at the DNS provider:
+At the domain DNS provider, point the apex domain to GitHub Pages using these A records:
 
 - `185.199.108.153`
 - `185.199.109.153`
 - `185.199.110.153`
 - `185.199.111.153`
 
-Optionally point `www` to `tarieciphertech.github.io` with a CNAME record. Preserve existing MX and TXT records used by email and domain verification. Do not change records for other active services without checking their purpose.
+Optional `www` CNAME: `tarieciphertech.github.io`.
+
+Preserve email MX/TXT records and any records used by other active services. Do not replace existing records until their purpose is confirmed.
+
+## Contact form limitation
+
+The contact page currently prepares and copies an enquiry in the visitor's browser. It does **not** transmit or store form submissions. GitHub Pages only hosts static files; it does not run a server-side form handler or database. To receive enquiries automatically, the company must later choose an approved email/form provider or a separate backend. No company email address or telephone number has been invented in this site.
 
 ## Before public launch
 
-- Confirm the final company service list and wording.
-- Add the official business email, telephone/WhatsApp and social links.
-- Connect the enquiry form to an approved company inbox or form service. The current form formats and copies an enquiry; it does not transmit submissions.
-- Add approved team, project and client material only where publication is authorised.
-- Verify DNS and enable **Enforce HTTPS** once GitHub Pages has issued the certificate.
+- Confirm the final approved service descriptions and geographic/company registration wording.
+- Add official company email, telephone/WhatsApp and social channels when supplied.
+- Replace representative capability descriptions with approved project case studies and authorised client references.
+- Test all pages on mobile and desktop.
+- Verify DNS, Pages deployment and HTTPS.
+- Submit the sitemap in Google Search Console after the custom domain is live.
